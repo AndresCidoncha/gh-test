@@ -3,7 +3,7 @@ stages:
   - deploy
 
 variables:
-  API_ENDPOINT: ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/repository/
+  API_ENDPOINT: ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/repository/merge_requests
   GH_USER: AndresCidoncha
   GH_REPO: https://${GH_USER}:${GH_TOKEN}@github.com/AndresCidoncha/gh-test
 
