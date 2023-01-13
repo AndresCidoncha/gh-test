@@ -40,7 +40,7 @@ deploy:
     - apk add --no-cache git
     - git remote add github ${GH_REPO}
   script:
-    - git push github HEAD:refs/heads/master
+    - git push github HEAD:refs/heads/master -f
   only:
     - master
   except:
