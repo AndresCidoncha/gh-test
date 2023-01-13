@@ -31,6 +31,6 @@ deploy:
     - apk add --no-cache git
     - git remote add github ${GH_REPO}
   script:
-    - git push github HEAD:${CI_COMMIT_REF_NAME}
+    - git push github HEAD:refs/heads/master
   except:
     - schedules
