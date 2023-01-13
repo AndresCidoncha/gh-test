@@ -12,11 +12,10 @@ sync:
   image: ${ECR_DEVTOOLS}/external/alpine:3.14.0
   before_script:
     - apk add --no-cache git
-    - echo $GH_REPO
     - git config user.email "automation@devo.com"
     - git config user.name "devo_automation"
     - git remote add github ${GH_REPO}
-    - git remote add gitlab https://${GITLAB_REPO_USER}:${GITLAB_REPO_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git
+    - git remote add gitlab https://devo_automation:${GITLAB_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git
     - git fetch origin
   script:
     - git checkout master_gh
