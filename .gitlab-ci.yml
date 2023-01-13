@@ -14,6 +14,7 @@ sync:
     - apk add --no-cache git
     - git remote add github ${GH_REPO}
     - git remote add gitlab https://${GITLAB_REPO_USER}:${GITLAB_REPO_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git
+    - git fetch --all
   script:
     - git checkout master_gh
     - git pull --rebase github master
