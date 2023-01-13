@@ -15,14 +15,14 @@ sync:
     - git remote add github ${GH_REPO}
     - git remote add gitlab https://${GITLAB_REPO_USER}:${GITLAB_REPO_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git"
   script:
-    - git pull github HEAD:master
-    - git push gitlab HEAD:master_gh
+    - git pull github master
+    - git push gitlab master_gh
     - 'curl --fail --request POST
       --header "PRIVATE-TOKEN: ${GITLAB_TOKEN}"
       --data "source_branch=master_gh&target_branch=master&title=GH%20Sync"
       "${API_ENDPOINT}"'
-  only:
-    - schedules
+  #only:
+  #  - schedules
 
 deploy:
   stage: deploy
