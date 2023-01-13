@@ -10,6 +10,10 @@ variables:
 sync:
   stage: sync
   image: ${ECR_DEVTOOLS}/external/alpine:3.14.0
+  secrets:
+    GITLAB_TOKEN:
+      vault: gitlab/devo_automation@devo
+      file: false
   before_script:
     - apk add --no-cache git
     - git config user.email "automation@devo.com"
