@@ -25,6 +25,7 @@ sync:
     - git checkout master_gh
     - git pull --rebase github master
     - git push gitlab master_gh -f
+    - echo $API_ENDPOINT
     - 'curl --fail --request POST
       --header "PRIVATE-TOKEN: ${GITLAB_TOKEN}"
       --data "source_branch=master_gh&target_branch=master&title=GH%20Sync"
