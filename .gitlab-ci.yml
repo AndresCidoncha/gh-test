@@ -9,7 +9,7 @@ variables:
 
 sync:
   stage: sync
-  image: ${ECR_DEVTOOLS}/external/alpine:3.17
+  image: ${ECR_DEVTOOLS}/external/alpine:3.14.0
   before_script:
     - git remote set-url github ${GH_REPO}
     - git remote set-url gitlab https://${GITLAB_REPO_USER}:${GITLAB_REPO_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git"
@@ -25,7 +25,7 @@ sync:
 
 deploy:
   stage: deploy
-  image: ${ECR_DEVTOOLS}/external/alpine:3.17
+  image: ${ECR_DEVTOOLS}/external/alpine:3.14.0
   before_script:
     - git remote set-url github ${GH_REPO}
   script:
