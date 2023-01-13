@@ -15,7 +15,7 @@ sync:
     - echo $GH_REPO
     - git remote add github ${GH_REPO}
     - git remote add gitlab https://${GITLAB_REPO_USER}:${GITLAB_REPO_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git
-    - git fetch origin --all
+    - git fetch origin
   script:
     - git checkout master_gh
     - git pull --rebase github master
