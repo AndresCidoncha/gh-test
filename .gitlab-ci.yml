@@ -24,7 +24,7 @@ sync:
   script:
     - git checkout master_gh
     - git pull --rebase github master
-    - git push gitlab master_gh
+    - git push gitlab master_gh -f
     - 'curl --fail --request POST
       --header "PRIVATE-TOKEN: ${GITLAB_TOKEN}"
       --data "source_branch=master_gh&target_branch=master&title=GH%20Sync"
